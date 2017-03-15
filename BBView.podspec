@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.license      = {:type => 'MIT'}
   s.author     	 = { 'cfeenstra67' => 'cameron.l.feenstra@gmail.com' }
   s.platform     = :ios
-  s.source       = { :git => 'https://github.com/BBView.git', :tag => '1.0' }
-  s.source_files  = 'BBView', 'BBView/**/*'
+  s.source       = { :git => 'https://github.com/cfeenstra67/BBView.git', :tag => 'v1.0' }
+  s.source_files  = 'BBView', 'BBView/**/*.{h,m}'
 end
