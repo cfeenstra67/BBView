@@ -3,7 +3,7 @@ The easiest way to install this framework is using CocoaPods.  Simply add:
 ```
 pod 'BBView'
 ```
-`to the Podfile of your Xcode project.
+to the Podfile of your Xcode project.
 
 BBView is a UIView subclass that leverages the power of block-based programming to allow for far greater non-subclassing customization of
 UIView.  There are three main components to BBView: layout blocks, gesture recognizer action blocks, and a delegate protocol which "cleans up around the edges" a bit, allowing for even greater customization if more than just layout blocks and action blocks are required for the desired customization.  The first component, layout blocks, are implemented as the setFrameBlock and layoutSubviewsBlock properties of BBView.  To supplement this, string identifiers can be set for subviews to help access them in layout blocks.  Each of these allows the developer to append code to the standard UIView methods of setFrame and layoutSubviews, respectively.  A code example is given below.
@@ -19,6 +19,7 @@ UIView.  There are three main components to BBView: layout blocks, gesture recog
   super.frame=CGRectMake(0,0,100,100);
   //sub's frame is now also CGRectMake(0,0,100,100)
 ```
+Note that BBView also implements bracketted element access for subview identifiers.  The subViewForIdentifier call above could be replaced with '(BBView*)view[@"subview"].frame=view.bounds;' and the setIdentifier:forSubview: call could be relaced with 'super[@"subview"]=sub;'.
 Another way that BBView uses blocks to improve UIView customization is by allowing the developer the set "action blocks" for the gesture recognizers they add to the view.  A code example for this is also provided below.
 ```
     BBView *view=[[BBView alloc] init];
